@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0E400209-6E24-4E4B-9BC0-F683ED63F069}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>RES3VS</RootNamespace>
-    <AssemblyName>RES3VS</AssemblyName>
+    <ProjectGuid>{87F06B79-F883-422D-94CB-EC76F2A5D67B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClassLibrary</RootNamespace>
+    <AssemblyName>ClassLibrary</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -42,23 +40,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\projekatRES3\projekatRES3\LoadBalancer.cs">
-      <Link>LoadBalancer.cs</Link>
+    <Compile Include="..\..\projekatRES3\Code.cs">
+      <Link>Code.cs</Link>
     </Compile>
-    <Compile Include="..\..\projekatRES3\projekatRES3\Reader.cs">
-      <Link>Reader.cs</Link>
+    <Compile Include="..\..\projekatRES3\CollectionDescription.cs">
+      <Link>CollectionDescription.cs</Link>
     </Compile>
-    <Compile Include="..\..\projekatRES3\projekatRES3\Worker.cs">
-      <Link>Worker.cs</Link>
+    <Compile Include="..\..\projekatRES3\HistoricalCollection.cs">
+      <Link>HistoricalCollection.cs</Link>
     </Compile>
-    <Compile Include="..\..\projekatRES3\projekatRES3\Writer.cs">
-      <Link>Writer.cs</Link>
+    <Compile Include="..\..\projekatRES3\ILoadBalancer.cs">
+      <Link>ILoadBalancer.cs</Link>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="..\..\projekatRES3\IReader.cs">
+      <Link>IReader.cs</Link>
+    </Compile>
+    <Compile Include="..\..\projekatRES3\IWorker.cs">
+      <Link>IWorker.cs</Link>
+    </Compile>
+    <Compile Include="..\..\projekatRES3\IWriter.cs">
+      <Link>IWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\..\projekatRES3\WorkerProperty.cs">
+      <Link>WorkerProperty.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

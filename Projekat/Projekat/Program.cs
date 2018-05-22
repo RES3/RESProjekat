@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RES3VS
+namespace Projekat
 {
     class Program
     {
