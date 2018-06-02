@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using projekatRES3;
+using Project;
 
 namespace projekatRES3 {
 	public class Worker : IWorker {
@@ -78,6 +79,19 @@ namespace projekatRES3 {
                     m_CollectionDescription.Dataset = 4;
                     break;
             }
+
+            if(CompareCodeValue(m_CollectionDescription.m_HistoricalCollection.m_WorkerProperty[0].Code, m_CollectionDescription.Dataset))
+            {
+                Logger.Log("\nReceiveFromLoadBalancer in Worker converted received data to CollectionDescription.\n");
+                Logger.Log("CollectionDescription: " + m_CollectionDescription + "\n");
+                //serialize(m_collectiondescription);
+            }
+            else
+            {
+                Logger.Log("Validation of DataSet in Worker did not pass.\n");
+                return false;
+            }
+            return true;
         }
 
         public bool CompareCodeValue(Code code, int value)
