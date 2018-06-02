@@ -16,7 +16,7 @@ namespace projekatRES3 {
 	public class Worker : IWorker {
 
  		public projekatRES3.CollectionDescription m_CollectionDescription;
-        private bool isTurnOn;
+        private bool isTurnOn; //vidi jel upaljen worker
         public bool check = false;
         Dictionary<Code, int> pairs = new Dictionary<Code, int>();
 
@@ -117,6 +117,44 @@ namespace projekatRES3 {
             }
             return false;
         }
+
+        public bool Deadband(CollectionDescription collection)
+        {
+            List<CollectionDescription> dataFromBase = null;
+            if (collection == null)
+            {
+                throw new ArgumentNullException("Empty collection sent to chech deadband");
+            }
+            if (collection.m_HistoricalCollection.m_WorkerProperty[0].Code.Equals(Code.CODE_DIGITAL))
+            {
+
+                return true;
+            }
+           //uzmi podatke iz baza
+
+
+
+            if (dataFromBase.Count == 0)
+                return true;
+
+            foreach (CollectionDescription item in dataFromBase)
+            {
+                if (item.m_HistoricalCollection.m_WorkerProperty[0].Code == collection.m_HistoricalCollection.m_WorkerProperty[0].Code)
+                {
+                    if (collection.m_HistoricalCollection.m_WorkerProperty[0].WorkerValue < (item.m_HistoricalCollection.m_WorkerProperty[0].WorkerValue * 1.02))
+                    {
+                        return false;
+                       
+                    }
+                }
+
+            }
+
+            return true;
+        }
+
+
+
     }//end Worker
 
 }//end namespace projekatRES3

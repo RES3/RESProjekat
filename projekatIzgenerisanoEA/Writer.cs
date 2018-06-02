@@ -25,7 +25,7 @@ namespace projekatRES3 {
 		~Writer(){
 
 		}
-
+        //writer salje zahtev LoadBalancer-u da upali novi ili ugasi postojeci worker
         public bool TurnOff(bool turn)
         {
             throw new NotImplementedException();
