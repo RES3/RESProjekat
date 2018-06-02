@@ -16,7 +16,8 @@ namespace projekatRES3 {
 
 		private int dataset;
 		private int id;
-		public projekatRES3.HistoricalCollection m_HistoricalCollection;
+        public projekatRES3.HistoricalCollection m_HistoricalCollection = new HistoricalCollection();
+        public DateTime timeStamp;
 
 		public CollectionDescription(){
 
@@ -44,6 +45,11 @@ namespace projekatRES3 {
 			}
 		}
 
-	}//end CollectionDescription
+        public override string ToString()
+        {
+            return "ID: " + ID + ", DataSet: " + Dataset + ", Code: " + m_HistoricalCollection.m_WorkerProperty[0].Code + "Value: "+ m_HistoricalCollection.m_WorkerProperty[0].WorkerValue + "\nTimeStamp: " + timeStamp ;
+        }
+
+    }//end CollectionDescription
 
 }//end namespace projekatRES3

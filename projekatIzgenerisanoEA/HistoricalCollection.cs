@@ -14,7 +14,7 @@ using projekatRES3;
 namespace projekatRES3 {
 	public class HistoricalCollection {
 
-		public projekatRES3.WorkerProperty m_WorkerProperty;
+		public projekatRES3.WorkerProperty[] m_WorkerProperty = new WorkerProperty[1]; //provjeri ovo 1
 
 		public HistoricalCollection(){
 

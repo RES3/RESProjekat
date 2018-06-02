@@ -64,6 +64,7 @@
     <Compile Include="..\..\projekatIzgenerisanoEA\WorkerProperty.cs">
       <Link>WorkerProperty.cs</Link>
     </Compile>
+    <Compile Include="LoadBalancerProperty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

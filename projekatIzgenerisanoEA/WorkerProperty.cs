@@ -16,7 +16,7 @@ namespace projekatRES3 {
 	public class WorkerProperty {
 
 		private Code code;
-		private int historicalValue;
+		private int workerValue;
 
 		public WorkerProperty(){
 
@@ -35,12 +35,12 @@ namespace projekatRES3 {
 			}
 		}
 
-		public int HistoricalValue{
+		public int WorkerValue{
 			get{
-				return historicalValue;
+				return workerValue;
 			}
 			set{
-				historicalValue = value;
+				workerValue = value;
 			}
 		}
 

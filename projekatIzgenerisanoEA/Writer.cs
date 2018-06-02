@@ -10,6 +10,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using projekatRES3;
+using Project;
+using System.Threading;
 
 namespace projekatRES3 {
 	public class Writer : IWriter {
@@ -17,13 +19,43 @@ namespace projekatRES3 {
 		public projekatRES3.LoadBalancer m_LoadBalancer;
 
 		public Writer(){
-
+            m_LoadBalancer = new LoadBalancer();
 		}
 
 		~Writer(){
 
 		}
 
-	}//end Writer
+        public bool TurnOff(bool turn)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool TurnOn(bool turn)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool WriteToLoadBalancer(Code code, int value)
+        {
+            Logger.Log("LoadBalancer received from Writer:\n\tData: " + code + ", " + value + "\n\tTime: " + DateTime.Now);
+
+            return m_LoadBalancer.ReceiveFromWriter(code, value);
+        }
+
+        public void GenerateData()
+        {
+            while(true)
+            {
+                Random random = new Random();
+                Code code = (Code)random.Next(8);
+                int value = random.Next(8000);
+
+                WriteToLoadBalancer(code,value);
+
+                Thread.Sleep(2000);
+            }
+        }
+    }//end Writer
 
 }//end namespace projekatRES3

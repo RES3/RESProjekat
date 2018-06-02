@@ -12,7 +12,10 @@ using System.IO;
 
 namespace projekatRES3 {
 	public interface ILoadBalancer  {
-
+        bool ReceiveFromWriter(Code code, int value);
+        //metoda za provjeru da li je worker upaljen ili ugasen
+        //metoda za slanje workeru i raspodjelu posla
+        bool SendToWorker();
 	}//end ILoadBalancer
 
 }//end namespace projekatRES3

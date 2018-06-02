@@ -14,7 +14,8 @@ using System.IO;
 
 namespace projekatRES3 {
 	public interface IWorker  {
-
+        bool ReceiveFromLoadBalancer(Code code, int value);
+        bool CompareCodeValue(Code code, int value); //ValidationCheck
 	}//end IWorker
 
 }//end namespace projekatRES3
