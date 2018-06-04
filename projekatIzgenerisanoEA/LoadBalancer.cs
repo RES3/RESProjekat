@@ -18,6 +18,7 @@ namespace projekatRES3 {
 		public List<Worker> m_Worker;
         public List<LoadBalancerProperty> tempList;
         Worker worker;
+        public bool receivedFromWriter = false;
         //da li je worker upaljen ili ugasen
         public static bool worker1 = true;
         public static bool worker2 = true;
@@ -43,11 +44,12 @@ namespace projekatRES3 {
             try
             {
                 tempList.Add(new LoadBalancerProperty() { Code = code, Valuee = value });
-                
+                receivedFromWriter = true;
                 return true;
             }
             catch(Exception)
             {
+                receivedFromWriter = false;
                 return false;
             }
         }
@@ -102,8 +104,12 @@ namespace projekatRES3 {
             //u ovoj metodi cemo raditi i rasporedjivanja po workerima
             try
             {
-                worker.ReceiveFromLoadBalancer(tempList[0].Code, tempList[0].Valuee);
-                return true;
+                if (receivedFromWriter == true)
+                {
+                    worker.ReceiveFromLoadBalancer(tempList[0].Code, tempList[0].Valuee);
+                    return true;
+                }
+                return false;
             }
             catch(Exception)
             {
