@@ -40,10 +40,8 @@ namespace projekatRES3 {
             while(true)
             {
                 Random random = new Random();
-                Code code = (Code)random.Next(8);
-                int value = random.Next(8000);
 
-                WriteToLoadBalancer(code,value);
+                WriteToLoadBalancer((Code)random.Next(8), random.Next(8000));
 
                 Thread.Sleep(2000); //salje svake dvije sekunde
             }
