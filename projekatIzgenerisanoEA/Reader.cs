@@ -16,13 +16,9 @@ namespace projekatRES3 {
 
 		public projekatRES3.Worker m_Worker;
 
-		public Reader(){
+		public Reader(){ }
 
-		}
-
-		~Reader(){
-
-		}
+		~Reader(){ }
 
 	}//end Reader
 
