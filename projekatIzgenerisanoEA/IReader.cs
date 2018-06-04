@@ -13,6 +13,8 @@ using System.IO;
 namespace projekatRES3 {
 	public interface IReader  {
 
-	}//end IReader
+        bool ReadDataFromBase(Code code, DateTime startTime, DateTime endTime);
+
+    }//end IReader
 
 }//end namespace projekatRES3
