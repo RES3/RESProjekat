@@ -23,7 +23,6 @@ namespace projekatRES3 {
         List<CollectionDescription> collectionDataset2 = new List<CollectionDescription>();
         List<CollectionDescription> collectionDataset3 = new List<CollectionDescription>();
         List<CollectionDescription> collectionDataset4 = new List<CollectionDescription>();
-        public static DataIO serializer = new DataIO();
 
         public Worker(){
        
@@ -186,19 +185,19 @@ namespace projekatRES3 {
             {
                 case 1:
                     collectionDataset1.Add(collectionDescription);
-                    serializer.SerializeObject<List<CollectionDescription>>(collectionDataset1, "DataSet1.xml");
+                    Base.serializer.SerializeObject<List<CollectionDescription>>(collectionDataset1, "DataSet1.xml");
                     return true;
                 case 2:
                     collectionDataset2.Add(collectionDescription);
-                    serializer.SerializeObject<List<CollectionDescription>>(collectionDataset1, "DataSet2.xml");
+                    Base.serializer.SerializeObject<List<CollectionDescription>>(collectionDataset1, "DataSet2.xml");
                     return true;
                 case 3:
                     collectionDataset3.Add(collectionDescription);
-                    serializer.SerializeObject<List<CollectionDescription>>(collectionDataset1, "DataSet3.xml");
+                    Base.serializer.SerializeObject<List<CollectionDescription>>(collectionDataset1, "DataSet3.xml");
                     return true;
                 case 4:
                     collectionDataset1.Add(collectionDescription);
-                    serializer.SerializeObject<List<CollectionDescription>>(collectionDataset1, "DataSet4.xml");
+                    Base.serializer.SerializeObject<List<CollectionDescription>>(collectionDataset1, "DataSet4.xml");
                     return true;
                 default:
                     return false;

@@ -64,6 +64,7 @@
     <Compile Include="..\..\projekatIzgenerisanoEA\WorkerProperty.cs">
       <Link>WorkerProperty.cs</Link>
     </Compile>
+    <Compile Include="Base.cs" />
     <Compile Include="DataIO.cs" />
     <Compile Include="LoadBalancerProperty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
