@@ -77,7 +77,7 @@ namespace projekatRES3 {
             {
                 Logger.Log("\nReceiveFromLoadBalancer in Worker converted received data to CollectionDescription.\n");
                 Logger.Log("CollectionDescription: " + m_CollectionDescription + "\n");
-                //serialize(m_collectiondescription);
+                Serialization(m_CollectionDescription);
             }
             else
             {
@@ -123,9 +123,8 @@ namespace projekatRES3 {
 
                 return true;
             }
-           //uzmi podatke iz baza
 
-
+            dataFromBase = Deserialization(collection.Dataset);
 
             if (dataFromBase.Count == 0)
                 return true;

@@ -16,9 +16,9 @@ namespace projekatRES3 {
 	public class LoadBalancer : ILoadBalancer {
 
 		public List<Worker> m_Worker;
-        public List<LoadBalancerProperty> tempList;
+        public static List<LoadBalancerProperty> tempList;
         Worker worker;
-        public bool receivedFromWriter = false;
+        public static bool receivedFromWriter = false;
         //da li je worker upaljen ili ugasen
         public static bool worker1 = true;
         public static bool worker2 = true;
