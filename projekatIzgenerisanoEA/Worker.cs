@@ -146,7 +146,33 @@ namespace projekatRES3 {
             return true;
         }
 
-       
+        public bool Serialization(CollectionDescription collectionDescription)
+        {
+            if (collectionDescription == null)
+            {
+                Console.WriteLine("Collection is empty!");
+                return false;
+            }
+
+            if (Deadband(collectionDescription))
+            {
+                collectionDescription.timeStamp = DateTime.Now;
+                if (Serializer(collectionDescription))
+                {
+                    Logger.Log("\nCollection Description is serialized");
+                    return true;
+                }
+
+                return false;
+            }
+            else
+            {
+                Logger.Log("\nCollection Desription has not passed DeadBand check.\nValue is 2% lower than old value.\n");
+                return false;
+            }
+
+
+        }
 
         public bool Serializer(CollectionDescription collectionDescription)
         {
