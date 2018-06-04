@@ -87,7 +87,7 @@ namespace projekatRES3 {
             return true;
         }
 
-        public bool CompareCodeValue(Code code, int value)
+        public bool CompareCodeValue(Code code, int dataset)
         {
             pairs.Add(Code.CODE_ANALOG,1);
             pairs.Add(Code.CODE_DIGITAL,1);
@@ -102,7 +102,7 @@ namespace projekatRES3 {
             {
                 if(pair.Key == code)
                 {
-                    if(pair.Value == value)
+                    if(pair.Value == dataset)
                     {
                         return true;
                     }
