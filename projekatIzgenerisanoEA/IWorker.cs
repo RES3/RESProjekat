@@ -16,8 +16,9 @@ namespace projekatRES3 {
 	public interface IWorker  {
         bool ReceiveFromLoadBalancer(Code code, int value);
         bool CompareCodeValue(Code code, int value);//ValidationCheck
-        bool Deadband(CollectionDescription cd);
-
+        bool Deadband(CollectionDescription collectionDescription);
+        bool Serialization(CollectionDescription collectionDescription);
+        bool Serializer(CollectionDescription collectionDescription);
     }//end IWorker
 
 }//end namespace projekatRES3
