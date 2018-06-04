@@ -16,25 +16,12 @@ namespace projekatRES3 {
 	public class Worker : IWorker {
 
  		public projekatRES3.CollectionDescription m_CollectionDescription;
-        private bool isTurnOn; //vidi jel upaljen worker
+        //private bool isTurnOn; //vidi jel upaljen worker
         public bool check = false;
         Dictionary<Code, int> pairs = new Dictionary<Code, int>();
 
-        public bool IsTurnOn
-        {
-            get
-            {
-                return isTurnOn;
-            }
-            set
-            {
-                isTurnOn = value;
-            }
-        }
-
-
 		public Worker(){
-            IsTurnOn = false;
+       
 		}
 
 		~Worker(){
@@ -54,6 +41,7 @@ namespace projekatRES3 {
 
             switch(code)
             {
+                // naparaviti enum za dataset
                 case Code.CODE_ANALOG:
                     m_CollectionDescription.Dataset = 1;
                     break;

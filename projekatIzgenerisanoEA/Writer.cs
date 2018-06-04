@@ -26,15 +26,7 @@ namespace projekatRES3 {
 
 		}
         //writer salje zahtev LoadBalancer-u da upali novi ili ugasi postojeci worker
-        public bool TurnOff(bool turn)
-        {
-            throw new NotImplementedException();
-        }
 
-        public bool TurnOn(bool turn)
-        {
-            throw new NotImplementedException();
-        }
 
         public bool WriteToLoadBalancer(Code code, int value)
         {
@@ -53,8 +45,13 @@ namespace projekatRES3 {
 
                 WriteToLoadBalancer(code,value);
 
-                Thread.Sleep(2000);
+                Thread.Sleep(2000); //salje svake dvije sekunde
             }
+        }
+
+        public bool RequestForTurnOnOff(bool turnOn)
+        {
+            return m_LoadBalancer.ReceiveTurnOnOff(turnOn);
         }
     }//end Writer
 

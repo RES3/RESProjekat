@@ -15,8 +15,7 @@ using System.IO;
 namespace projekatRES3 {
 	public interface IWriter  {
         bool WriteToLoadBalancer(Code code, int value);
-        bool TurnOn(bool turn);
-        bool TurnOff(bool turn);
+        bool RequestForTurnOnOff(bool turnOn);
 	}//end IWriter
 
 }//end namespace projekatRES3

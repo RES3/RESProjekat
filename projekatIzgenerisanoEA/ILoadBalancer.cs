@@ -16,6 +16,7 @@ namespace projekatRES3 {
         //metoda za provjeru da li je worker upaljen ili ugasen
         //metoda za slanje workeru i raspodjelu posla
         bool SendToWorker();
+        bool ReceiveTurnOnOff(bool turnOn);
 	}//end ILoadBalancer
 
 }//end namespace projekatRES3

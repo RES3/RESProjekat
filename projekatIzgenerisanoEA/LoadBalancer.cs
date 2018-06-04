@@ -18,6 +18,11 @@ namespace projekatRES3 {
 		public List<Worker> m_Worker;
         public List<LoadBalancerProperty> tempList;
         Worker worker;
+        //da li je worker upaljen ili ugasen
+        public static bool worker1 = true;
+        public static bool worker2 = true;
+        public static bool worker3 = true;
+        public static bool worker4 = true;
 
 		public LoadBalancer(){
             tempList = new List<LoadBalancerProperty>();
@@ -47,16 +52,57 @@ namespace projekatRES3 {
             }
         }
 
+        public bool ReceiveTurnOnOff(bool turnOn)
+        {
+           if(turnOn == true)
+           {
+                if (worker1 == false)
+                {
+                    worker1 = true;
+                }
+                else if (worker2 == false)
+                {
+                    worker2 = true;
+                }
+                else if(worker3 == false)
+                {
+                    worker3 = true;
+                }
+                else if(worker4 == false)
+                {
+                    worker4 = true;
+                }
+           }
+           else
+           {
+                if (worker1 == true)
+                {
+                    worker1 = false;
+                }
+                else if (worker2 == true)
+                {
+                    worker2 = false;
+                }
+                else if (worker3 == true)
+                {
+                    worker3 = false;
+                }
+                else if (worker4 == true)
+                {
+                    worker4 = false;
+                }
+            }
+
+           //prepraviti
+           return true;
+        }
+
         public bool SendToWorker()
         {
             //u ovoj metodi cemo raditi i rasporedjivanja po workerima
-            Code c;
-            int v;
             try
             {
-                c = tempList[0].Code;
-                v = tempList[0].Valuee;
-                worker.ReceiveFromLoadBalancer(c,v);
+                worker.ReceiveFromLoadBalancer(tempList[0].Code, tempList[0].Valuee);
                 return true;
             }
             catch(Exception)
