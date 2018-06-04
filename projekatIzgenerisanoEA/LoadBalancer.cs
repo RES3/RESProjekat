@@ -95,7 +95,7 @@ namespace projekatRES3 {
                 }
             }
 
-           //prepraviti
+           //prepraviti; break posle svakog?
            return true;
         }
 
