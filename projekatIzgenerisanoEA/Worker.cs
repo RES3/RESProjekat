@@ -205,6 +205,50 @@ namespace projekatRES3 {
             }
         }
 
+        public List<CollectionDescription> Deserialization(int dataset)
+        {
+            List<CollectionDescription> tempList = new List<CollectionDescription>();
+
+            switch(dataset)
+            {
+                case 1:
+                    if (!File.Exists("DataSet1.xml"))
+                    {
+                        File.Create("DataSet1.xml").Dispose();
+                        tempList = serializer.DeSerializeObject<List<CollectionDescription>>("DataSet1.xml");
+                    }
+                    break;
+                case 2:
+                    if (!File.Exists("DataSet2.xml"))
+                    {
+                        File.Create("DataSet2.xml").Dispose();
+                        tempList = serializer.DeSerializeObject<List<CollectionDescription>>("DataSet2.xml");
+                    }
+                    break;
+                case 3:
+                    if (!File.Exists("DataSet3.xml"))
+                    {
+                        File.Create("DataSet3.xml").Dispose();
+                        tempList = serializer.DeSerializeObject<List<CollectionDescription>>("DataSet3.xml");
+                    }
+                    break;
+                case 4:
+                    if (!File.Exists("DataSet4.xml"))
+                    {
+                        File.Create("DataSet4.xml").Dispose();
+                        tempList = serializer.DeSerializeObject<List<CollectionDescription>>("DataSet4.xml");
+                    }
+                    break;        
+            }
+
+            if(tempList == null)
+            {
+                tempList = new List<CollectionDescription>();
+            }
+
+            return tempList;
+
+        }
     }//end Worker
 
 }//end namespace projekatRES3
