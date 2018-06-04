@@ -107,6 +107,7 @@ namespace projekatRES3 {
                 if (receivedFromWriter == true)
                 {
                     worker.ReceiveFromLoadBalancer(tempList[0].Code, tempList[0].Valuee);
+                    tempList = new List<LoadBalancerProperty>();
                     return true;
                 }
                 return false;
