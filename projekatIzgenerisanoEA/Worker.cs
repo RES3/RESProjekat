@@ -11,16 +11,21 @@ using System.Text;
 using System.IO;
 using projekatRES3;
 using Project;
+using ClassLibrary;
 
 namespace projekatRES3 {
 	public class Worker : IWorker {
 
- 		public projekatRES3.CollectionDescription m_CollectionDescription;
-        //private bool isTurnOn; //vidi jel upaljen worker
+        public projekatRES3.CollectionDescription m_CollectionDescription;
         public bool check = false;
         Dictionary<Code, int> pairs = new Dictionary<Code, int>();
+        List<CollectionDescription> collectionDataset1 = new List<CollectionDescription>();
+        List<CollectionDescription> collectionDataset2 = new List<CollectionDescription>();
+        List<CollectionDescription> collectionDataset3 = new List<CollectionDescription>();
+        List<CollectionDescription> collectionDataset4 = new List<CollectionDescription>();
+        public static DataIO serializer = new DataIO();
 
-		public Worker(){
+        public Worker(){
        
 		}
 
@@ -141,7 +146,38 @@ namespace projekatRES3 {
             return true;
         }
 
+       
 
+        public bool Serializer(CollectionDescription collectionDescription)
+        {
+            if (collectionDescription == null)
+            {
+                Console.WriteLine("Collection is empty!");
+                return false;
+            }
+
+            switch(collectionDescription.Dataset)
+            {
+                case 1:
+                    collectionDataset1.Add(collectionDescription);
+                    serializer.SerializeObject<List<CollectionDescription>>(collectionDataset1, "DataSet1.xml");
+                    return true;
+                case 2:
+                    collectionDataset2.Add(collectionDescription);
+                    serializer.SerializeObject<List<CollectionDescription>>(collectionDataset1, "DataSet2.xml");
+                    return true;
+                case 3:
+                    collectionDataset3.Add(collectionDescription);
+                    serializer.SerializeObject<List<CollectionDescription>>(collectionDataset1, "DataSet3.xml");
+                    return true;
+                case 4:
+                    collectionDataset1.Add(collectionDescription);
+                    serializer.SerializeObject<List<CollectionDescription>>(collectionDataset1, "DataSet4.xml");
+                    return true;
+                default:
+                    return false;
+            }
+        }
 
     }//end Worker
 
