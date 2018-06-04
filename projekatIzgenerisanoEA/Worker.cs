@@ -247,6 +247,55 @@ namespace projekatRES3 {
             return tempList;
 
         }
+
+        public List<CollectionDescription> DataForReader(Code code)
+        {
+            List<CollectionDescription> tempList = new List<CollectionDescription>();
+            List<CollectionDescription> returnList = new List<CollectionDescription>();
+
+            switch (code)
+            {
+                case Code.CODE_ANALOG:
+                    tempList = Deserialization(1);
+                    break;
+                case Code.CODE_DIGITAL:
+                    tempList = Deserialization(1);
+                    break;
+                case Code.CODE_CUSTOM:
+                    tempList = Deserialization(2);
+                    break;
+                case Code.CODE_LIMITSET:
+                    tempList = Deserialization(2);
+                    break;
+                case Code.CODE_SINGLENOE:
+                    tempList = Deserialization(3);
+                    break;
+                case Code.CODE_MULTIPLENODE:
+                    tempList = Deserialization(3);
+                    break;
+                case Code.CODE_CONSUMER:
+                    tempList = Deserialization(4);
+                    break;
+                case Code.CODE_SOURCE:
+                    tempList = Deserialization(4);
+                    break;
+                default:
+                    break;
+            }
+
+            if(tempList.Count > 0)
+            {
+                foreach(CollectionDescription cd in tempList)
+                {
+                    if(cd.m_HistoricalCollection.m_WorkerProperty[0].Code.Equals(code))
+                    {
+                        returnList.Add(cd);
+                    }
+                }
+            }
+
+            return returnList;
+        }
     }//end Worker
 
 }//end namespace projekatRES3

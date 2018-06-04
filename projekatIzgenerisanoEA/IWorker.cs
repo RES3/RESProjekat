@@ -19,6 +19,7 @@ namespace projekatRES3 {
         bool Deadband(CollectionDescription collectionDescription);
         bool Serialization(CollectionDescription collectionDescription);
         bool Serializer(CollectionDescription collectionDescription);
+        List<CollectionDescription> DataForReader(Code code);
     }//end IWorker
 
 }//end namespace projekatRES3
