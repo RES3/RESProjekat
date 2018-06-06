@@ -142,7 +142,7 @@ namespace LoadBalancer
                     }
                     Thread.Sleep(30);
                 }
-              Thread.Sleep(10);
+              Thread.Sleep(300);
             }
         }
 

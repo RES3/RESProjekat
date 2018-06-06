@@ -86,7 +86,7 @@ namespace Writer
                     RecreateChannel();
                 }
 
-                Thread.Sleep(2000); //salje svake dvije sekunde
+                Thread.Sleep(400); //salje svake dvije sekunde
             }
         }
         public void RecreateChannel()
