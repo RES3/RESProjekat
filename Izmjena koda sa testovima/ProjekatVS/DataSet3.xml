@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<ArrayOfCollectionDescription xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CollectionDescription>
+    <m_HistoricalCollection>
+      <m_WorkerProperty>
+        <WorkerProperty>
+          <Code>CODE_SINGLENOE</Code>
+          <WorkerValue>100</WorkerValue>
+        </WorkerProperty>
+      </m_WorkerProperty>
+    </m_HistoricalCollection>
+    <timeStamp>2018-06-08T13:11:09.6422725+02:00</timeStamp>
+    <Dataset>3</Dataset>
+    <ID>209</ID>
+  </CollectionDescription>
+  <CollectionDescription>
+    <m_HistoricalCollection>
+      <m_WorkerProperty>
+        <WorkerProperty>
+          <Code>CODE_MULTIPLENODE</Code>
+          <WorkerValue>100</WorkerValue>
+        </WorkerProperty>
+      </m_WorkerProperty>
+    </m_HistoricalCollection>
+    <timeStamp>2018-06-08T13:11:09.7542637+02:00</timeStamp>
+    <Dataset>3</Dataset>
+    <ID>676</ID>
+  </CollectionDescription>
+</ArrayOfCollectionDescription>

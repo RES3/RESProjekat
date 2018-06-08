@@ -1,0 +1,21 @@
+﻿<Window x:Class="Writer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Writer"
+        mc:Ignorable="d"
+        Title="Writter" Height="450" Width="800" ResizeMode="NoResize">
+    <Grid>
+        <Button Name="refresh_btn" Click="refresh_click" Content="Refrash" HorizontalAlignment="Left" Height="36" Margin="209,291,0,0" VerticalAlignment="Top" Width="66"/>
+        <DataGrid Name="workers" ItemsSource="{Binding WorkersList}" SelectionChanged="dataGridSelectionChange"  IsReadOnly="True" HorizontalAlignment="Left" Height="235" Margin="209,51,0,0" VerticalAlignment="Top" Width="363"  AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Ime workera" Binding="{Binding Ime}"/>
+                <DataGridTextColumn Header="Aktivan" Binding="{Binding Activan}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Activiraj" IsEnabled="{Binding AktivirajButtonEnabled}" Click="activiraj_click" HorizontalAlignment="Left" Height="36" Margin="408,291,0,0" VerticalAlignment="Top" Width="67"/>
+        <Button Content="Deaktiviraj" IsEnabled="{Binding DeaktivirajButtonEnabled}" Click="deaktiviraj_click" HorizontalAlignment="Left" Height="36" Margin="510,291,0,0" VerticalAlignment="Top" Width="62"/>
+
+    </Grid>
+</Window>
